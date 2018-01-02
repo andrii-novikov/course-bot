@@ -14,7 +14,7 @@ app = Proc.new do |env|
 end
 
 Thread.new do
-  require_relative 'app' 
+  require_relative 'app'
 end
 
 Rack::Handler::WEBrick.run app

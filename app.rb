@@ -5,7 +5,7 @@ subscribe.subscribers.each do |id, time|
   subscribe_schedule.add(id, time)
 end
 
-Telegram::Bot::Client.run(ENV['TOKEN'], logger: Logger.new($stderr)) do |bot|
+Telegram::Bot::Client.run(ENV['TOKEN'], logger: Logger.new(ENV['LOG'])) do |bot|
   bot.listen do |message|
     answer = case message.text
              when '/start'
