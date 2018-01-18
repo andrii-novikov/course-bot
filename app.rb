@@ -1,3 +1,13 @@
+require 'bundler'
+Bundler.require
+require 'telegram/bot'
+require 'rufus-scheduler'
+require_relative 'app/course_bot'
+require_relative 'app/subscribe'
+require_relative 'app/subscribe_schedule'
+require_relative 'lib/figaro/adapter'
+Figaro.load
+
 subscribe = Subscribe.new
 subscribe_schedule = SubscribeSchedule.new
 

@@ -42,7 +42,6 @@ GEM
       byebug (~> 9.1)
       pry (~> 0.10)
     public_suffix (3.0.1)
-    rack (2.0.3)
     rufus-scheduler (3.4.2)
       et-orbi (~> 1.0)
     telegram-bot-ruby (0.8.6.1)
@@ -70,9 +69,8 @@ DEPENDENCIES
   http
   pry
   pry-byebug
-  rack
   rufus-scheduler
   telegram-bot-ruby
 
 BUNDLED WITH
-   1.16.1.pre1
+   1.16.1
