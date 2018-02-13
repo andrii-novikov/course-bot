@@ -26,17 +26,19 @@ namespace :deploy do
   end
 end
 
-namespase :app do
+namespace :app do
   desc 'Restart application'
   task :start do
-    on roles(:app), in: :sequence, wait: 5 do
-      execute "rackup -D -P #{fetch(:rack_pid)}"
+    on roles(:web) do
+      within release_path do
+        execute :bundle, :exec, :"rackup -D -P #{fetch(:rack_pid)}"
+      end
     end
   end
 
   task :stop do
     on roles(:app), in: :sequence, wait: 5 do
-      execute "rackup -D -P #{fetch(:rack_pid)}"
+
     end
   end
 end

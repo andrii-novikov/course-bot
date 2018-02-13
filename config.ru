@@ -13,8 +13,8 @@ app = Proc.new do |env|
 	    ['200', {'Content-Type' => 'text/html'}, ['A barebones rack app.']]
 end
 
-Thread.new do
-  require_relative 'app'
-end
+# Thread.new do
+#   require_relative 'app'
+# end
 
-Rack::Handler::WEBrick.run app
+Rack::Handler::WEBrick.run app, daemonize: true
